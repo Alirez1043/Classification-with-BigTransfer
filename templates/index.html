@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Classification</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href= "{{url_for ('static', filename='style.css')}}" >
+
+</head>
+<body>
+  <script>
+    function showPreview(event){
+      if(event.target.files.length > 0){
+        var src = URL.createObjectURL(event.target.files[0]);
+        var preview = document.getElementById("image-preview");
+        preview.src = src;
+        preview.style.display = "block";
+      }
+    }
+  </script>
+
+  <div class="container">
+    <div class="description box">
+      <h1>Description</h1>
+      <p>This classifier is trained by Big Transfer model.</p><br>
+      <p>Upload an image from following categories:</p><br>
+      <pre>
+        1.  Leopard
+        2.  Tiger
+        3.  Lion
+        4.  Horse
+        5.  Zebra
+        
+      </pre>
+    </div>
+
+    <div class="uploader box">
+      <h1>Upload</h1>
+
+      <div class="preview">
+        <img id="image-preview">
+      </div>
+      
+        <form class="form" id="uploader" method="post" enctype="multipart/form-data" action="/predict">
+
+          <p style="margin-bottom: 10px"><label for="selector">Upload Image</label></p>
+          <input type="file" id="selector" accept="image/*" name='image' onchange="showPreview(event);"> 
+        </form>
+      
+      <div class="wrap">
+        <button type="submit" class="button" form="uploader" valus="Submit" onclick="getPrediction(event)">Predict</button>
+      </div>
+
+    
+    </div>
+
+    <div class="statistics box">
+      <h1>Endpoints</h1><br>
+
+      <h3>/predict</h3><br>
+      <p>By clicking "predict" button you will be redirected to this endpoint.</p><br>
+
+      <h3>/statistic</h3><br>
+      <p>This endpoint includes testing process statistic.</p>
+
+    </div>
+  </div>
+  
+</body>
+</html>
