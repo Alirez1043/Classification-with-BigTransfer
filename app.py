@@ -70,11 +70,11 @@ def statistic():
     recall = "98.6%"
     f1_score = "98.5%"
     conf_mat = {
-                "Leopard" :"[198 ,2 ,0 ,0 ,0]",
-                "Tiger":"[1 ,195 ,0 ,3 ,1]",
-                "Horse":"[0 ,0 ,199 ,1 ,0]",
-                "Lion":"[1 ,2 ,1 ,196 ,0]",
-                "Zebra":"[0 ,1 ,1 ,0 ,198]"
+                "A-Leopard" :"[198 ,2 ,0 ,0 ,0]",
+                "B-Tiger":"[1 ,195 ,0 ,3 ,1]",
+                "C-Horse":"[0 ,0 ,199 ,1 ,0]",
+                "D-Lion":"[1 ,2 ,1 ,196 ,0]",
+                "E-Zebra":"[0 ,1 ,1 ,0 ,198]"
                 }
     answer = {
         "class_names":class_names,
