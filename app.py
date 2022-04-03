@@ -65,7 +65,6 @@ def predict():
 
 @app.route("/statistic" ,methods = ["GET"])
 def statistic():
-    class_names = ["Leopard" ,"Tiger" ,"Horse" ,"Lion" ,"Zebra"]
     precision = "98.6%"
     recall = "98.6%"
     f1_score = "98.5%"
@@ -77,7 +76,6 @@ def statistic():
                 "E-Zebra":"[0 ,1 ,1 ,0 ,198]"
                 }
     answer = {
-        "class_names":class_names,
         "Confusion_Matrix" : conf_mat ,
         "Precision":precision ,
         "Recall":recall ,
