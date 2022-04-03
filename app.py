@@ -77,6 +77,7 @@ def statistic():
                 "Zebra":"[0 ,1 ,1 ,0 ,198]"
                 }
     answer = {
+        "class_names":class_names,
         "Confusion_Matrix" : conf_mat ,
         "Precision":precision ,
         "Recall":recall ,
