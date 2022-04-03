@@ -69,21 +69,19 @@ def statistic():
     precision = "98.6%"
     recall = "98.6%"
     f1_score = "98.5%"
-    conf_mat = np.array([
-                        [198 ,2 ,0 ,0 ,0],
-                        [1 ,195 ,0 ,3 ,1],
-                        [0 ,0 ,199 ,1 ,0],
-                        [1 ,2 ,1 ,196 ,0],
-                        [0 ,1 ,1 ,0 ,198]
-                    ])
+    conf_mat = {
+                "Leopard" :"[198 ,2 ,0 ,0 ,0]",
+                "Tiger":"[1 ,195 ,0 ,3 ,1]",
+                "Horse":"[0 ,0 ,199 ,1 ,0]",
+                "Lion":"[1 ,2 ,1 ,196 ,0]",
+                "Zebra":"[0 ,1 ,1 ,0 ,198]"
+                }
     answer = {
-        "Confusion_Matrix" : {} ,
+        "Confusion_Matrix" : conf_mat ,
         "Precision":precision ,
         "Recall":recall ,
         "F1_Score":f1_score
     }
-    for category , res in zip(class_names ,conf_mat) :
-        answer["Confusion_Matrix"][category] = str(res)
 
     return jsonify(answer) ,200
 
